@@ -1,0 +1,18 @@
+
+! Generated Configurations --> {{ hostname }}
+
+enable 
+ conf t
+int vlan {{ vlan_number }} 
+description {{ name }} 
+ip address {{ ip }}  {{ subnet }} 
+no shutdown
+standby version 2
+standby {{ group }} ip {{ virtual_IP}}
+standby {{ group }} priority {{priority_num}}
+standby {{ group }} preempt
+standby {{ group }} {{ name }} 
+ip helper-address {{ ip_helper_1 }}
+ip helper-address {{ ip_helper_2 }}
+ip helper-address {{ ip_helper_3 }}
+
